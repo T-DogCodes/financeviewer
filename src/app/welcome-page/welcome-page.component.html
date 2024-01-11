@@ -1,0 +1,15 @@
+<h1>Finance Viewer</h1>
+
+<div class="upload-container">
+  <input
+    hidden
+    type="file"
+    #uploader
+    (change)="uploadFile($event)"
+  />
+  <button (click)="uploader.click()">
+    Upload
+  </button>
+
+
+</div>

@@ -1,0 +1,6 @@
+<div class="list">
+  <div *ngFor="let entry of data" class="list-entry">
+    <div class="store-name">{{entry.storeName}}</div>
+    <div class="price">{{entry | listPrice | number: "1.2-2"}}</div>
+  </div>
+</div>

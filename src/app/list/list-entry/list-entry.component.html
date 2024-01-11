@@ -1,0 +1,5 @@
+<div *ngIf="entry" class="list-entry">
+  <div class="store-name">{{entry.storeName}}</div>
+  <div class="price">{{entry | listPrice | number: "1.2-2"}}</div>
+  <div class="date">{{entry.date | date: "dd.MM.yyyy"}}</div>
+</div>
