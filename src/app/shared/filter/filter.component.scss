@@ -1,0 +1,31 @@
+@import "../../../colors";
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  min-height: max(100vh, 100%);
+}
+.filter-control {
+  background: $action_secondary;
+  min-width: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.filter-content {
+  padding: 0.5em;
+  background: #FFE5E5;
+  transition: 1s;
+}
+
+.filter-entry {
+  padding: 0.25em 0;
+}
+
+.filter-label {
+  padding-bottom: 0.25em;
+  font-size: 1.25rem;
+
+}

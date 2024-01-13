@@ -33,7 +33,8 @@ export class ImportService {
       return {
         name: article.name,
         price: article.price,
-        amount: article.amount ?? 1
+        amount: article.amount ?? 1,
+        discount: article.discount
       }
     }
 

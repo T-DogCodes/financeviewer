@@ -1,1 +1,31 @@
-<p>filter works!</p>
+<div class="filter">
+  <div class="filter-content" [hidden]="!filterVisible">
+    <div class="filter-entry">
+      <div class="filter-label">Date</div>
+      <div class="range-filter">
+        <input type="date" [(ngModel)]="values.dateFrom"> - <input type="date" [(ngModel)]="values.dateTo">
+      </div>
+    </div>
+    <div class="filter-entry">
+      <div class="filter-label">Price</div>
+      <div class="range-filter">
+        <input type="number" [(ngModel)]="values.minPrice"> - <input type="number" [(ngModel)]="values.maxPrice">
+      </div>
+    </div>
+    <div class="filter-entry">
+      <div class="filter-label">Stores</div>
+      <div class="select-filter">
+        <div *ngFor="let storeName of data | filterStore; index as i">
+          <input type="checkbox" [id]="'checkbox' + i" [checked]="values.stores[storeName] ?? false" (change)="toggleStoreName(storeName)">
+          <label [for]="'checkbox' + i">{{storeName}}</label>
+        </div>
+
+      </div>
+    </div>
+    <div class="filter-button-entry">
+      <button class="reset" (click)="resetFilter()">Reset</button>
+      <button class="submit" (click)="submitFilter()">Submit</button>
+    </div>
+  </div>
+  <div class="filter-control" (click)="toggleFilterVisibility()"><span>{{filterVisible ? "<" : ">"}}</span></div>
+</div>

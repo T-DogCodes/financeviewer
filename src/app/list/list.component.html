@@ -1,6 +1,8 @@
-<div class="list">
-  <div *ngFor="let entry of data" class="list-entry">
-    <div class="store-name">{{entry.storeName}}</div>
-    <div class="price">{{entry | listPrice | number: "1.2-2"}}</div>
+<div class="list-component">
+  <app-filter [data]="data" (filterValues)="onFilterValuesChanged($event)"></app-filter>
+
+  <div class="list">
+    <app-sum-entry [data]="data | filter: filterValues"></app-sum-entry>
+    <app-list-entry *ngFor="let entry of data | filter: filterValues" [entry]="entry"></app-list-entry>
   </div>
 </div>

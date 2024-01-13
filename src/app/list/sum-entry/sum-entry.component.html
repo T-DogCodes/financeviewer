@@ -1,0 +1,24 @@
+<div class="sum-entry">
+  <div class="attribute">
+    <div class="attribute-row">
+      <div class="label">Summe Artikel:</div>
+      <div class="value">{{data | sumEntryMapArticle | sumEntryArticles}}</div>
+    </div>
+    <div class="attribute-row">
+      <div class="label">Unterschiedliche:</div>
+      <div class="value"> {{(data | sumEntryMapArticle).length}}</div>
+    </div>
+  </div>
+  <div class="attribute">
+    <div class="attribute-row">
+      <div class="label">Einkäufe:</div>
+      <div class="value">{{data.length}}</div>
+    </div>
+  </div>
+  <div class="attribute sum">
+    <div class="attribute-row">
+      <div class="label">SUMME:</div>
+      <div class="value">€ {{data | sumEntryMapArticle | sumEntryPrice | number: "1.2-2": "de"}}</div>
+    </div>
+  </div>
+</div>

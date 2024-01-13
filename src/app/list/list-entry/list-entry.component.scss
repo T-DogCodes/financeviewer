@@ -1,0 +1,75 @@
+@import "../../../colors";
+
+.list-entry {
+  margin: 0.5em;
+  border: 1px solid black;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em;
+  background: $background_2;
+}
+
+.store-name {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.date {
+  font-style: italic;
+}
+
+.price {
+  font-weight: lighter;
+  font-size: 1.5em;
+}
+
+.info-line {
+  padding: 0.5em 0.5em 0.5em 2em;
+  font-size: 0.9em;
+  background: $action_secondary;
+  font-style: italic;
+}
+
+.article-list {
+  font-family: "Courier New", serif;
+}
+
+.article-list-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 0.25em 1em;
+}
+
+.article-name {
+  text-align: left;
+}
+
+.header .article-amount {
+  display: block;
+  text-align: center;
+}
+
+.article-amount {
+  display: grid;
+  grid-template-columns: 1fr 3em 1fr;
+  text-align: center;
+}
+.article-sum {
+  text-align: right;
+}
+
+
+.am-1 {
+  text-align: right;
+}
+.am-2 {
+  text-align: center;
+}
+.am-3 {
+  text-align: left;
+}

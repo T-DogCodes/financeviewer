@@ -1,0 +1,33 @@
+.sum-entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5em;
+  background: black;
+  color: white;
+  margin: 0.5em;
+}
+
+.attribute {
+  display: flex;
+  flex-direction: column;
+}
+
+.attribute:not(.sum) {
+  font-weight: bold;
+}
+
+.attribute-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25em 0;
+}
+
+.sum {
+  font-size: 1.75em;
+  align-self: center;
+}
+
+.value {
+  padding-left: 2rem;
+}

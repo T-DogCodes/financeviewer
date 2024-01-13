@@ -1,5 +1,31 @@
-<div *ngIf="entry" class="list-entry">
-  <div class="store-name">{{entry.storeName}}</div>
-  <div class="price">{{entry | listPrice | number: "1.2-2"}}</div>
-  <div class="date">{{entry.date | date: "dd.MM.yyyy"}}</div>
+<div *ngIf="entry" class="list-entry" (click)="toggleArticleList()">
+  <div class="info-row">
+    <div class="info-col">
+      <div class="store-name">{{entry.storeName}}</div>
+      <div class="date">{{entry.date | date: "dd.MM.yyyy"}}</div>
+    </div>
+    <div class="price">€ {{entry | listPrice | number: "1.2-2": "de-DE"}}</div>
+  </div>
+  <div class="info-line">
+    Dieser Einkauf enthält {{getArticleSum(entry)}} <span *ngIf="getArticleSum(entry) == entry.articles.length">unterschiedliche</span>
+    Artikel
+    <span *ngIf="getArticleSum(entry) != entry.articles.length">({{entry.articles.length}} unterschiedliche)</span>
+  </div>
+  <div class="article-list" [hidden]="!open" (click)="$event.stopImmediatePropagation()">
+    <div class="article-list-entry header">
+      <div class="article-name">Name</div>
+      <div class="article-amount">Amount</div>
+      <div class="article-sum">Preis</div>
+    </div>
+
+    <div class="article-list-entry" *ngFor="let article of entry.articles">
+      <div class="article-name">{{article.name}}</div>
+      <div class="article-amount">
+        <div class="am-1">(€ <span class="article-amount-price">{{article.price | number: "1.2-2": "de-DE"}}</span></div>
+        <div class="am-2"> &times; </div>
+        <div class="am-3"><span class="article-amount-amount">{{article.amount | number: "1.0-0"}}</span>)</div>
+      </div>
+      <div class="article-sum">€ {{getArticlePriceSum(article) | number: "1.2-2": "de-DE"}}</div>
+    </div>
+  </div>
 </div>
