@@ -1,0 +1,43 @@
+.root {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.header {
+  background: #FFE5E5;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  font-family: "Courier New", serif;
+  font-style: italic;
+  font-size: 1.1em;
+  width: 100%;
+}
+
+.store-name {
+  font-family: "Courier New", serif;
+  font-weight: bold;
+  width: 100%;
+}
+
+.tags {
+  padding: 0.5em;
+}
+
+.buttons {
+  min-width: 4em;
+  width: 4em;
+  max-width: 4em;
+}
+
+

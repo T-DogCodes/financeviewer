@@ -1,0 +1,16 @@
+<div class="root">
+  <div class="main">
+    <div class="header">
+      <div class="title">
+        {{tagListEntry.name}}
+      </div>
+      <div class="store-name">
+        {{tagListEntry.storeName}}
+      </div>
+    </div>
+    <div class="tags">
+      <app-tag-entry *ngFor="let tag of tagListEntry.tags" [tag]="tag"></app-tag-entry>
+    </div>
+  </div>
+  <div class="buttons"></div>
+</div>
