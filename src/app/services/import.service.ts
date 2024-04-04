@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Entry} from "../models/entry.model";
 import {Article} from "../models/article.model";
+import {Discount} from "../models/discount.model";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,18 @@ export class ImportService {
     function mapArticles(articles: any[]): Article[] {
       return articles.map(mapArticle)
     }
+    function mapDiscount(discount: any, discounts: any[]): Discount[] {
+      if (discount != undefined && discounts != undefined) {
+        throw new Error("Invalid formed entry. There cannot be a discount and a discounts field at the same time")
+      } else if (discount != null) {
+        return [discount]
+      } else if (discounts != null) {
+        return discounts
+      } else {
+        return [];
+      }
+    }
+
     function mapArticle(article: any): Article {
       if (article.name == null || article.price == null) {
         throw new Error(`Invalid formed article in entry ${entry.storeName} at date ${entry.date} with name ${article.name}, price ${article.price}`)
@@ -34,7 +47,7 @@ export class ImportService {
         name: article.name,
         price: article.price,
         amount: article.amount ?? 1,
-        discount: article.discount
+        discounts: mapDiscount(article.discount, article.discounts)
       }
     }
 

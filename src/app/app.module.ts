@@ -19,6 +19,14 @@ import { SumEntryComponent } from './list/sum-entry/sum-entry.component';
 import { SumEntryPricePipe } from './list/sum-entry/pipes/sum-entry-price.pipe';
 import { SumEntryMapArticlePipe } from './list/sum-entry/pipes/sum-entry-map-article.pipe';
 import { SumEntryArticlesPipe } from './list/sum-entry/pipes/sum-entry-articles.pipe';
+import { TimeviewerTableComponent } from './timeviewer/timeviewer-table/timeviewer-table.component';
+import { TimeviewerFilterPipe } from './timeviewer/pipes/timeviewer-filter.pipe';
+import { TimeviewerFilterComponent } from './timeviewer/timeviewer-filter/timeviewer-filter.component';
+import { TagListComponent } from './tag-list/tag-list.component';
+import { TagListUploadComponent } from './tag-list/tag-list-upload/tag-list-upload.component';
+import { TagListListComponent } from './tag-list/tag-list-list/tag-list-list.component';
+import { ListItemComponent } from './tag-list/tag-list-list/list-item/list-item.component';
+import { TagEntryComponent } from './tag-list/tag-list-list/list-item/tag-entry/tag-entry.component';
 
 registerLocaleData(localeDe)
 
@@ -37,7 +45,15 @@ registerLocaleData(localeDe)
     SumEntryComponent,
     SumEntryPricePipe,
     SumEntryMapArticlePipe,
-    SumEntryArticlesPipe
+    SumEntryArticlesPipe,
+    TimeviewerTableComponent,
+    TimeviewerFilterPipe,
+    TimeviewerFilterComponent,
+    TagListComponent,
+    TagListUploadComponent,
+    TagListListComponent,
+    ListItemComponent,
+    TagEntryComponent
   ],
   imports: [
     BrowserModule,

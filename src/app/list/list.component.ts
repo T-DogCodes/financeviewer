@@ -29,7 +29,6 @@ export class ListComponent implements OnInit {
     if (!this.dataService.hasData()) {
       this.router.navigate([""])
     }
-
   }
 
   ngOnInit(): void {

@@ -1,0 +1,10 @@
+<h1>Tag List</h1>
+
+<h2>New Tag List Entries</h2>
+<app-list-item *ngFor="let tagListEntry of tagListService.newTagListEntries" [tagListEntry]="tagListEntry"></app-list-item>
+
+<h2>Removing Tag List Entries</h2>
+<app-list-item *ngFor="let tagListEntry of tagListService.removingTagListEntries" [tagListEntry]="tagListEntry"></app-list-item>
+
+<h2>Existing Tag List Entries</h2>
+<app-list-item *ngFor="let tagListEntry of tagListService.existingTagListEntries" [tagListEntry]="tagListEntry"></app-list-item>
